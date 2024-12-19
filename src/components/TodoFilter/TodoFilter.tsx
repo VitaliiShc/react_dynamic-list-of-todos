@@ -7,6 +7,10 @@ type Props = {
   setStatus: Dispatch<SetStateAction<Filters>>;
 };
 
+const makeStrCapitalize = (str: string) => {
+  return str[0].toUpperCase() + str.slice(1);
+};
+
 export const TodoFilter: React.FC<Props> = props => {
   const { query, setQuery, setStatus } = props;
 
@@ -21,7 +25,7 @@ export const TodoFilter: React.FC<Props> = props => {
             {Object.values(Filters).map(value => {
               return (
                 <option key={value} value={value}>
-                  {value}
+                  {makeStrCapitalize(value)}
                 </option>
               );
             })}
