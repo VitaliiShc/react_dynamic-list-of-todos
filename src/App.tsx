@@ -38,7 +38,6 @@ export const App: React.FC = () => {
   };
 
   useEffect(() => {
-    setIsloading(true);
     getTodos()
       .then(data => {
         setTodos(data);
